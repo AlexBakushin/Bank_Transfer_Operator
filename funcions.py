@@ -10,6 +10,7 @@ class Operations:
     Класс операций
     разделяет операцию на составляющие:
     """
+
     def __init__(self, id_, state, date, operation_amount, description, from_, to):
         """
         Инициатор класса
@@ -122,15 +123,15 @@ def is_executed():
     return executed_list[:5]
 
 
-#Создание отсортированного массива из архива
+# Создание отсортированного массива из архива
 operations_list_list = opener_zip()
-#Фильтрация массива
+# Фильтрация массива
 executed_list = is_executed()
-#Итерация массива на отдельные операции
+# Итерация массива на отдельные операции
 for one_division in executed_list:
-    #Деление информации об операции на составляющие
+    # Деление информации об операции на составляющие
     id_, state, data, operation_amount, description, from_, to = one_division
-    #Перенос составляющих в класс
+    # Перенос составляющих в класс
     operation_1 = Operations(id_, state, data, operation_amount, description, from_, to)
-    #Печать результата
+    # Печать результата
     operation_1.print()
